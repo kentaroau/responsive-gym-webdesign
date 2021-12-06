@@ -1,1 +1,1 @@
-# responsive-gym-webdesign
+# Responsive gym web design
