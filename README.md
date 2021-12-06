@@ -1,4 +1,4 @@
 # Responsive gym web design
 
 
-![web design screenshot](Capture.PNG)
+![web design screenshot](screely-1638832282587.png)
