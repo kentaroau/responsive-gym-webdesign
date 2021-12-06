@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive gym site</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
+        integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="brand">Globo Gym</div>
+        <ul class="nav__list">
+            <li>About</li>
+            <li>Testimonials</li>
+            <li>Contact</li>
+            <li><button class="btn">Sign up</button></li>
+
+        </ul>
+        <img class="hamburger-menu" id="hamburger-menu" src="/img/menu-line.svg">
+
+    </nav>
+
+    <div class="mobile-menu">
+        <ul class="nav__mobile">
+            <li>Home</li>
+            <li>About</li>
+            <li>Testimonials</li>
+            <li>Contact</li>
+        </ul>
+        <img class="hamburger-menu--close" id="hamburger-menu-close" src="/img/close-line.svg">
+
+    </div>
+    <div class="hero">
+        <div class="background"></div>
+        <div class="image__container">
+            <img class="image" width="300" src="/img/model.png" />
+        </div>
+    </div>
+
+    <main>
+        <div class="jumbotron">
+            <h1 class="jumbo__heading">Health <br> & Fitness</h1>
+
+            <strong>Quis ab dolorem quasi laboriosam</strong>
+
+            <div>Subscribe to our email list to get updates on the next dodgeball season!</div>
+
+            <div class="subscribe__container">
+                <input type="text" class="input__email" placeholder="Enter your email" />
+                <button class="subscribeBtn">Get Started</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <img class="footer__social" src="/img/twitter-fill.svg" />
+        <img class="footer__social" src="/img/facebook-fill.svg" />
+        <img class="footer__social" src="/img/instagram-fill.svg" />
+
+    </footer>
+</body>
+<script>
+    gsap.from('.hero', { y: -500, duration: 1 });
+    gsap.from('.image', { y: 500, duration: 0.8, delay: 1.2 });
+    gsap.from('.nav__list li', { y: -150, duration: 0.8, delay: 1, stagger: 0.1 });
+    gsap.from('.jumbotron', { y: 150, duration: 0.8, delay: 1.6, opacity: 0 });
+    gsap.from('.footer__social', { y: 150, duration: 0.8, delay: 1.6, opacity: 0, stagger: 0.1 });
+
+    var hamburger = document.getElementById('hamburger-menu');
+    var hamburgerClose = document.getElementById('hamburger-menu-close');
+    hamburger.addEventListener('click', function () {
+        document.querySelector('.mobile-menu').style.display = 'flex';
+        gsap.from(".nav__mobile li", { y: 150, duration: 0.8, stagger: 0.1 });
+
+    });
+
+    hamburgerClose.addEventListener('click', function () {
+
+        document.querySelector('.mobile-menu').style.display = 'none';
+
+    });
+</script>
+
+</html>
